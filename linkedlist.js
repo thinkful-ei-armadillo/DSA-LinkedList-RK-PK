@@ -1,10 +1,32 @@
 /* eslint-disable no-console */
 class _Node {
-  constructor(value, next) {
+  constructor(value, next, prev) {
     this.value = value;
     this.next = next;
+    this.prev = prev;
   }
 }
+class DoubleLinkList{
+  constructor (){
+    this.head = null;
+  }
+  insertFirst(item){
+
+  }
+  insertLast (item){
+
+  }
+  insertBefore (item, key){
+
+  }
+  remove (item) {
+
+  }
+  find (item){
+
+  }
+}
+
 class LinkedList {
   constructor() {
     this.head = null;
@@ -248,6 +270,7 @@ function insertInSortedOrder(value, list) {
 }
 
 function WhatDoesThisProgramDo(lst) {
+  //checks for duplicate numbers
   let current = lst.head;
   while (current !== null) {
     let newNode = current;
@@ -278,7 +301,6 @@ function reverseHelper(node, list) {
     list.head = node;
     return node;
   }
-
   //reverseHelper(node.next).next =
   return (reverseHelper(node.next, list).next = node);
 }
