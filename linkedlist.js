@@ -11,10 +11,19 @@ class DoubleLinkList{
     this.head = null;
   }
   insertFirst(item){
-
+    this.head = new _Node(item, null, null);
   }
   insertLast (item){
-
+    const newNode = new _Node(item, null, null);
+    if (this.head === null) 
+      return this.insertFirst(newNode);
+    else {
+      let lastNode = this.head;
+      while (lastNode.next !== null) 
+        lastNode = lastNode.next;
+      lastNode.next = newNode;
+      newNode.prev = lastNode;
+    }
   }
   insertBefore (item, key){
 
@@ -113,7 +122,7 @@ class LinkedList {
         this.insertFirst(item);
         return;
       } else {
-        console.log("position does'nt exist");
+        console.log('position does\'nt exist');
         return null;
       }
     }
